@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ScreenShot</string>
+    <string name="image_was_not_saved">Falha ao salvar imagem</string>
+</resources>
