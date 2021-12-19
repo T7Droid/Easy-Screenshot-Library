@@ -3,7 +3,7 @@ package com.thyagoneves.easy_view_screenshot
 import android.app.Activity
 import android.view.View
 
-class Screenshot private constructor(
+class EasyScreenshot private constructor(
     val path: String?,
     val folderName: String?,
     val view: View? = null,
@@ -23,7 +23,7 @@ class Screenshot private constructor(
         fun targetViewId(viewId: View) = apply { this.viewId = viewId}
         fun shareAfterScreenshot(shareImage: Boolean) = apply { this.shareImagePar = shareImage }
         fun activity(activity: Activity) = apply { this.activityPar = activity }
-        fun build() = Screenshot(path, folderName, viewId, shareImagePar, activityPar)
+        fun build() = EasyScreenshot(path, folderName, viewId, shareImagePar, activityPar)
     }
 
     fun takeScreenshot() {
