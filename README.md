@@ -1,10 +1,10 @@
-English - Português (pt-br)
+English 🇺🇸 - Português (pt-br) 🇧🇷
 
 
 
-_English:_
+🇺🇸 _English:_
 
-## An easy to use Library that will help you to take screenshots of the views in yout app
+### An easy to use Library that will help you to take screenshots of the views in yout app
 
 
 
@@ -80,9 +80,15 @@ shareAfterScreenshot(share: Boolean) - Set true if you want to imediatelly share
 
 
 
-_Português:_
 
-## Uma Library fácil de usar que irá lhe permitir tirar screenshots das views no seu aplicativo, veja como usar:
+
+
+
+
+
+🇧🇷 _Português:_
+
+### Uma Library fácil de usar que irá lhe permitir tirar screenshots das views no seu aplicativo, veja como usar:
 
 
 
