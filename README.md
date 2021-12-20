@@ -27,7 +27,7 @@ Add it in your root build.gradle at the end of repositories:
 
 ```css
 	dependencies {
-	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:Tag'
+	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.0'
 	}
 ```
 
