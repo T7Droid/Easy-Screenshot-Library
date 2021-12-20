@@ -1,4 +1,4 @@
-package com.thyagoneves.easy_view_screenshot
+package com.thyagoneves
 
 import android.Manifest
 import android.app.Activity
@@ -19,6 +19,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import com.thyagoneves.easy_view_screenshot.R
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*
@@ -142,11 +143,10 @@ class Helper {
             )
             == PackageManager.PERMISSION_GRANTED
         ) {
-
             val now = Date()
             DateFormat.format("yyyy-MM-dd_hh:mm:ss", now)
             val root = Environment.getExternalStorageDirectory().toString()
-            val myDir = File("$root/$folderNamePar")
+            val myDir = File("$root/${folderNamePar.toString().lowercase().replace(" ", "_")}")
             myDir.mkdirs()
 
             val fname = "Image-${System.currentTimeMillis()}.jpg"

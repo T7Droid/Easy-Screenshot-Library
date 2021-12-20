@@ -2,7 +2,7 @@ package com.thyagoneves.easy_screenshot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import com.thyagoneves.EasyViewScreenshot
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,16 +10,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val myTxtView = findViewById<View>(R.id.rootView)
+        val myTxtView = findViewById<android.view.View>(R.id.rootView)
+        val btn = findViewById<android.view.View>(R.id.button)
 
-        val screenshot = Screenshot.Builder()
-            .activity(this)
-            .folderName("Thyago Neves") //Nome da pasta que será criada na galeria
-            .pathInExternalStorage("screenshots") //Nome da imagem
-            .targetViewId(myTxtView) //View que você deseja salvar a imagem
-            .shareAfterScreenshot(true) //se você deseja compartilhar após tirar o screenshot
-            .build()
-
-        screenshot.takeScreenshot()
+        btn.setOnClickListener {
+            val screenshot = EasyViewScreenshot.Builder()
+                .activity(this)
+                .folderName("Nova Pasta") //Nome da pasta que será criada na galeria
+                .imageFileName("screenshot") //Nome da imagem
+                .targetViewId(myTxtView) //View que você deseja salvar a imagem
+                .shareAfterScreenshot(true) //se você deseja compartilhar após tirar o screenshot
+                .build()
+            screenshot.takeScreenshot()
+        }
     }
 }
