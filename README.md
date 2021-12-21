@@ -86,6 +86,9 @@ shareAfterScreenshot(share: Boolean) - Set true if you want to imediatelly share
 
 
 
+
+
+
 🇧🇷 _Português:_
 
 ### Uma Library fácil de usar que irá lhe permitir tirar screenshots das telas ou Views (ImageViews, TextView, etc), salvar as imagens no seu aplicativo, além de poder compartilhá-lhas!
