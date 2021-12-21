@@ -92,7 +92,7 @@ shareAfterScreenshot(share: Boolean) - Set true if you want to imediatelly share
 
 ### Uma Library fácil de usar que irá lhe permitir tirar screenshots das telas ou Views (ImageViews, TextView, etc), salvar as imagens no seu aplicativo, além de poder compartilhá-lhas!
 
-#### Não se preocupe mais com ter que verificar a versão do Android, implementar Scoped Storage, solicitação de permissões em tempo de execução... veja como usar:
+#### Não se preocupe mais com ter que verificar a versão do Android, implementar Scoped Storage, solicitação de permissões em tempo de execução...🤯⌛ veja como usar:
 
 
 **Passo 1.** Adicione o repositório do JitPack ao seu projeto.
