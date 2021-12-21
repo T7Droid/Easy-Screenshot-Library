@@ -4,6 +4,9 @@ English 🇺🇸 - Português (pt-br) 🇧🇷
 
 🇺🇸 _English:_
 
+-
+-
+-
 ### An easy to use Library that will help you to take screenshots of the views in yout app
 
 
@@ -91,6 +94,9 @@ shareAfterScreenshot(share: Boolean) - Set true if you want to imediatelly share
 
 🇧🇷 _Português:_
 
+-
+-
+-
 ### Uma Library fácil de usar que irá lhe permitir tirar screenshots das telas ou Views (ImageViews, TextView, etc), salvar as imagens no seu aplicativo, além de poder compartilhá-lhas!
 
 #### Não se preocupe mais com ter que verificar a versão do Android, implementar Scoped Storage, solicitação de permissões em tempo de execução... veja como usar:
