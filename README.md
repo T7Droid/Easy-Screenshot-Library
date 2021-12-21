@@ -1,4 +1,4 @@
-English 🇺🇸 - Português (pt-br) 🇧🇷
+🇺🇸 English |  🇧🇷 Português (pt-br)
 
 
 -
@@ -7,7 +7,7 @@ English 🇺🇸 - Português (pt-br) 🇧🇷
 
 🇺🇸 _English:_
 
-### An easy to use Library that will help you to take screenshots of the views in yout app
+### An easy to use Library that will help you to take screenshots 📸 of the views in your app
 
 
 
@@ -36,7 +36,7 @@ Add it in your root build.gradle at the end of repositories:
 
 
 
-**Step 3.** Add the READ and WRITE permissions on Manifest file:
+**Step 3.** Add the permissions in Manifest file:
 
 
 
@@ -50,16 +50,17 @@ Add it in your root build.gradle at the end of repositories:
 Now this is ready for use!
 
 ```
-val myTxtView = findViewById<View>(R.id.rootView)
+val myImageView = findViewById<View>(R.id.myImageView
 
-//In you activity or fragment, intantiate an EasyScreenshot object and pass the //parameters you want to it's Builder:
+//In you Activity or Fragment, instantiate an EasyScreenshot object and pass the 
+//parameters you want to it's Builder:
 
 val screenshot: EasyScreenshot = EasyScreenshot.Builder()
     .activity(this)
-    .folderName("T7Droid Images") //Nome da pasta que será criada na galeria
-    .pathInExternalStorage("screenshots") //Nome da imagem
-    .targetViewId(myTxtView) //Any View you want to take the screenshot
-    .shareAfterScreenshot(true) //se você deseja compartilhar após tirar o screenshot
+    .folderName("T7Droid Images") // Defines a name for the folder that will be created in galery;
+    .pathInExternalStorage("screenshots") //Set a name for the image file;
+    .targetViewId(myImageView //Any View you want to take the screenshot;
+    .shareAfterScreenshot(true) //Do you want to share just after take the screenshot?
     .build()
 
 screenshot.takeScreenshot()
@@ -67,17 +68,17 @@ screenshot.takeScreenshot()
 
 
 
-The parameters are:
+Methods:
 
 
 
-activity( activity: Activity) - The Activity context, you can use "this" if you are in an Activity, or, if you are inside a Fragment you can use activity, requireActivity, ... in Koltin, and getActivity( ) in Java;
+activity(activity: Activity) - The Activity context, you can use "this" inside an Activity, or, if you are inside a Fragment you can use activity, requireActivity, ... in Kotlin, and getActivity( ) in Java;
 
-folderName(folder: String ) - Here you can define the name of the new folder that will be created in the Galery app;
+folderName(folder: String ) - For the version before API 29 (Q) it will be the name of the folder that will be created to store the screenshots, for the version above (API 29 Q+) which uses the Scope Storage, it will be the name of the new folder that will be created in the Galery;
 
-pathInExternalStorage( ) - For the version before API 29 (Q) it will be the name of the folder that will be created to store the screenshots images, for the version above (API 29 Q+) which uses the Scope Storage, this will be the name  of the image saved.
+imageFileName( ) - Set a name for the image file;
 
-targetViewId(view: View) - Here you will pass the view you want to save as an image in the JPEG format, if you want to take a screenshot all the screen (not including ActionBar neither StatusBar) you need only to define an id for the root view of your Activity or Fragment and pass it as a parameter in this method;
+targetViewId(view: View) - Here can will pass any view you want to save as an image in the JPEG format, if you want to take a screenshot of the whole screen (not including ActionBar neither StatusBar) you need only to define an id for the root view of your Activity or Fragment and pass it as a parameter in this method. If you are using View Binding just pass binding.root;
 
 shareAfterScreenshot(share: Boolean) - Set true if you want to imediatelly share the image after taking the screenshot, if you want only to save the image and do not want to share set it as false.
 
