@@ -58,7 +58,7 @@ val myImageView = findViewById<View>(R.id.myImageView
 val screenshot: EasyScreenshot = EasyScreenshot.Builder()
     .activity(this)
     .folderName("T7Droid Images") // Defines a name for the folder that will be created in galery;
-    .pathInExternalStorage("screenshots") //Set a name for the image file;
+    .imageFileName("screenshots") //Set a name for the image file;
     .targetViewId(myImageView //Any View you want to take the screenshot;
     .shareAfterScreenshot(true) //Do you want to share just after take the screenshot?
     .build()
@@ -149,7 +149,7 @@ val myImageView = findViewById<View>(R.id.myImageView)
 val screenshot: EasyScreenshot = EasyScreenshot.Builder()
     .activity(this) // 1°- Activity
     .folderName("T7Droid Images") //2° - Nome para a pasta que será criada na galeria
-    .pathInExternalStorage("screenshots") //3° - Nome da imagem que será salva
+    .imageFileName("screenshots") //3° - Nome da imagem que será salva
     .targetViewId(myTxtView) //4° - View ou ViewGroup que desejar tirar o screenshot
     .shareAfterScreenshot(true) //5° - Deseja compartilhar após tirar o screenshot?
     .build()
