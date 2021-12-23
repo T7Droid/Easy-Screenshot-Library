@@ -136,7 +136,7 @@ Adicione a url ao seu arquivo build.gradle (Project) em repositories , ou,  no s
 
  
 
-Veja alguns parâmetros que podem ser passados no construtor neste exemplo abaixo:
+Veja alguns parâmetros que podem ser passados para o construtor neste exemplo abaixo:
 
 ```
 
