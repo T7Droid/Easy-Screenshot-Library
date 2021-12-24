@@ -40,7 +40,7 @@ class Helper {
     fun takeScreenshotAndSaveImage(
         path: String?,
         folderNameH: String?,
-        viewId: View,
+        viewId: View?,
         share: Boolean?,
         activity: Activity?
     ) {
@@ -62,10 +62,10 @@ class Helper {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     storeAndShareImageScopeStorage(
                         bitmap,
-                        "screenshot_image_${System.currentTimeMillis()}"
+                        "${pathPar}_${System.currentTimeMillis()}"
                     )
                 } else {
-                    storeImageOldVersions(bitmap)
+                    storeImageOldVersions(bitmap, pathPar!!)
                 }
             }, 100)
         } else {
@@ -96,11 +96,13 @@ class Helper {
             == PackageManager.PERMISSION_GRANTED
         ) {
             try {
+                val now = Date()
+                val date = DateFormat.format("yyyy-MM-dd_hh:mm:ss", now)
                 val contentResolver = activityPar?.contentResolver
                 val contentValues = ContentValues()
                 contentValues.put(
                     MediaStore.MediaColumns.DISPLAY_NAME,
-                    "$pathPar.jpg"
+                    "${pathPar}_$date.jpg"
                 )
                 contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
                 contentValues.put(
@@ -131,7 +133,7 @@ class Helper {
     }
 
     //Older versions P
-    private fun storeImageOldVersions(bitmap: Bitmap?) {
+    private fun storeImageOldVersions(bitmap: Bitmap?, imageName: String) {
         if (ContextCompat.checkSelfPermission(
                 activityPar!!.applicationContext,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -144,12 +146,12 @@ class Helper {
             == PackageManager.PERMISSION_GRANTED
         ) {
             val now = Date()
-            DateFormat.format("yyyy-MM-dd_hh:mm:ss", now)
+            val date = DateFormat.format("yyyy-MM-dd_hh:mm:ss", now)
             val root = Environment.getExternalStorageDirectory().toString()
             val myDir = File("$root/${folderNamePar.toString().lowercase().replace(" ", "_")}")
             myDir.mkdirs()
 
-            val fname = "Image-${System.currentTimeMillis()}.jpg"
+            val fname = "${imageName}_$date.jpg"
             val file = File(myDir, fname)
             file.mkdirs()
             try {

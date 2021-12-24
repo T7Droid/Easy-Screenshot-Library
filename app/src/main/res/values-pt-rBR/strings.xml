@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Easy Screenshot</string>
+    <string name="image_was_not_saved">Falha ao salvar a imagem</string>
+    <string name="fullscreen_with_only_action_bar">Tela inteira com a ActionBar</string>
+    <string name="single_view">View específica</string>
+    <string name="hello_neasyscreenshot">Olá EasyScreenshot!</string>
+    <string name="folder_name">Nome da pasta</string>
+    <string name="image_name">screensho</string>
+</resources>

@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">ScreenShot</string>
-    <string name="image_was_not_saved">Falha ao salvar imagem</string>
+    <string name="app_name">Easy Screenshot</string>
+    <string name="image_was_not_saved">Failed to save image</string>
+    <string name="image_was_saved">Imag sucessfully saved</string>
+    <string name="fullscreen_with_only_action_bar">Fullscreen with Action Bar</string>
+    <string name="single_view">Single View</string>
+    <string name="hello_neasyscreenshot">Hello EasyScreenshot!</string>
+    <string name="folder_name">Folder Name</string>
+    <string name="image_name">screenshot</string>
 </resources>
