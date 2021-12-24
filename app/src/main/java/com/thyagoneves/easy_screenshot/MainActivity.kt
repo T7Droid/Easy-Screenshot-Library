@@ -2,8 +2,7 @@ package com.thyagoneves.easy_screenshot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.thyagoneves.model.EasyViewScreenshot
-import com.thyagoneves.Type
+import com.thyagoneves.EasyViewScreenshot
 
 class MainActivity : AppCompatActivity() {
 

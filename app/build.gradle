@@ -10,7 +10,7 @@ android {
         applicationId "com.thyagoneves.easy_screenshot"
         minSdk 21
         targetSdk 31
-        versionCode 2
+        versionCode 1
         versionName "v1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -18,7 +18,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-  //  implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.2'
+    implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.2'
 
-    implementation project(':easy-view-screenshot')
+    //implementation project(':easy-view-screenshot')
 }
