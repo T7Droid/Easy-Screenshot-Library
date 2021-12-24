@@ -2,6 +2,7 @@ package com.thyagoneves.easy_screenshot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.thyagoneves.model.EasyViewScreenshot
 import com.thyagoneves.Type
 
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         val btnSingleView = findViewById<android.view.View>(R.id.btn_single_view)
         val btnFullScreenWithActionBar = findViewById<android.view.View>(R.id.btn_action_bar)
 
+        //Tirando screenshot de uma View específica:
 
         btnSingleView.setOnClickListener {
             val screenshot = EasyViewScreenshot.Builder()
@@ -25,9 +27,13 @@ class MainActivity : AppCompatActivity() {
                 .shareAfterScreenshot(true) //se você deseja compartilhar após tirar o screenshot
                 .build()
 
-            screenshot.takeScreenshot()
+            //salvando imagem - O método takeScreenshot() retorna uma uri:
+
+            val uri =  screenshot.takeScreenshot()
+            System.out.println("Screenshot Uri: ${uri}")
         }
 
+        //Tirando screenshot da tela inteira:
         btnFullScreenWithActionBar.setOnClickListener {
             val screenshot = EasyViewScreenshot.Builder()
                 .activity(this)
@@ -37,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 .shareAfterScreenshot(true)
                 .build()
 
-            screenshot.takeScreenshot()
+            val uri =  screenshot.takeScreenshot()
         }
     }
 }

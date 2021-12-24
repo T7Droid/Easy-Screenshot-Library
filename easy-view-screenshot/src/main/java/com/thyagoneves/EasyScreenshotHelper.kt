@@ -43,7 +43,7 @@ class Helper {
         viewId: View?,
         share: Boolean?,
         activity: Activity?
-    ) {
+    ){
         this.pathPar = path
         this.folderNamePar = folderNameH
         this.viewIdPar = viewId
@@ -114,11 +114,14 @@ class Helper {
                         MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                         contentValues
                     )
+                imageUri!!
                 val outPutStream =
-                    contentResolver?.openOutputStream(Objects.requireNonNull(imageUri!!))
+                    contentResolver.openOutputStream(Objects.requireNonNull(imageUri))
                 bitmap?.compress(Bitmap.CompressFormat.JPEG, 100, outPutStream)
                 Objects.requireNonNull(outPutStream)
                 Toast.makeText(activityPar, activityPar!!.getString(R.string.image_was_saved), Toast.LENGTH_SHORT).show()
+                Toast.makeText(activityPar, imageUri.toString(), Toast.LENGTH_SHORT).show()
+
                 if (shareImagePar!!) {
                     shareImage(imageUri, text)
                 }
@@ -132,7 +135,7 @@ class Helper {
         }
     }
 
-    //Older versions P
+    //Older versions
     private fun storeImageOldVersions(bitmap: Bitmap?, imageName: String) {
         if (ContextCompat.checkSelfPermission(
                 activityPar!!.applicationContext,
@@ -164,6 +167,8 @@ class Helper {
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
+            Toast.makeText(activityPar, Uri.parse(file.path).toString(), Toast.LENGTH_SHORT).show()
+
             if (shareImagePar == true) {
                 shareImage(Uri.parse(file.path), fname)
             }

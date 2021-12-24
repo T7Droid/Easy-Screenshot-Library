@@ -32,10 +32,9 @@ class EasyViewScreenshot private constructor(
     }
 
     fun takeScreenshot(){
-
         val helper = Helper()
         if (viewId != null) {
-           helper.takeScreenshotAndSaveImage(path + System.currentTimeMillis(), folderName, viewId ,share, activity)
+          helper.takeScreenshotAndSaveImage(path + System.currentTimeMillis(), folderName, viewId ,share, activity)
         }
 
         if (type == Type.FULLSCREEN_WITH_ACTION_BAR) {
