@@ -30,7 +30,7 @@ Add it in your root build.gradle at the end of repositories:
 
 ```css
 	dependencies {
-	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.0'
+	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.2'
 	}
 ```
 
@@ -59,7 +59,7 @@ val screenshot: EasyScreenshot = EasyScreenshot.Builder()
     .activity(this)
     .folderName("T7Droid Images") // Defines a name for the folder that will be created in galery;
     .imageFileName("screenshots") //Set a name for the image file;
-    .targetViewId(myImageView //Any View you want to take the screenshot;
+    .targetViewId(myImageView) //Any View you want to take the screenshot;
     .shareAfterScreenshot(true) //Do you want to share just after take the screenshot?
     .build()
 
@@ -78,7 +78,7 @@ folderName(folder: String ) - For the version before API 29 (Q) it will be the n
 
 imageFileName( ) - Set a name for the image file;
 
-targetViewId(view: View) - Here can will pass any view you want to save as an image in the JPEG format, if you want to take a screenshot of the whole screen (not including ActionBar neither StatusBar) you need only to define an id for the root view of your Activity or Fragment and pass it as a parameter in this method. If you are using View Binding just pass binding.root;
+targetViewId(view: View) - Here can will pass any view you want to save as an image in the JPEG format, if you want to take a screenshot of the whole screen with the ActionBar  you need only to pass a constant called Type.FULLSCREEN_WITH_ACTION_BAR
 
 shareAfterScreenshot(share: Boolean) - Set true if you want to imediatelly share the image after taking the screenshot, if you want only to save the image and do not want to share set it as false.
 
@@ -115,7 +115,7 @@ Adicione a url ao seu arquivo build.gradle (Project) em repositories , ou,  no s
 
 ```css
 	dependencies {
-	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.0'
+	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.2'
 	}
 ```
 
@@ -172,7 +172,7 @@ Os métodos e parâmetros que podem ser passados são:
 
 - imageFileName( imageName: String) - Nome da imagem que será salva concatenado com a data em que foi tirada.
 
-targetViewId(view: View) - Aqui você irá passar qualquer View ou ViewGroup que desejar salvar como uma imagem no formato JPEG, se você desejar tirar um screenshot de toda a tela (não incluindo nessa versão a ActionBar nem a StatusBar) você precisa apenas definir um id  para a View raiz do layout da sua Activity ou Fragment e passá-lo como parâmetro nesse método;
+targetViewId(view: View) - Aqui você irá passar qualquer View ou ViewGroup que desejar salvar como uma imagem no formato JPEG, se você desejar tirar um screenshot de toda a tela com ActionBar você deverá passar como parâ metro uma constante Type.FULLSCREEN_WITH_ACTION_BAR;
 
 shareAfterScreenshot(share: Boolean) - Defina como true se desejar compartilhar a imagem imediatamente após armazená-la, se você deseja apenas salvar a imagem e não deseja compartilhá-la, defina como false.
 
