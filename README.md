@@ -30,7 +30,7 @@ Add it in your root build.gradle at the end of repositories:
 
 ```css
 	dependencies {
-	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:main-SNAPSHOT'
+	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.2-SNAPSHOT'
 	}
 ```
 
@@ -115,7 +115,7 @@ Adicione a url ao seu arquivo build.gradle (Project) em repositories , ou,  no s
 
 ```css
 	dependencies {
-	       implementation 'com.github.T7Droid:Easy-Screenshot-Library:main-SNAPSHOT'
+	       implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.2-SNAPSHOT'
 	}
 ```
 
