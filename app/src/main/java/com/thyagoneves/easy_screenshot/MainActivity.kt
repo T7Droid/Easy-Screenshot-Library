@@ -2,7 +2,6 @@ package com.thyagoneves.easy_screenshot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.thyagoneves.model.EasyViewScreenshot
 import com.thyagoneves.Type
 
@@ -27,10 +26,8 @@ class MainActivity : AppCompatActivity() {
                 .shareAfterScreenshot(true) //se você deseja compartilhar após tirar o screenshot
                 .build()
 
-            //salvando imagem - O método takeScreenshot() retorna uma uri:
+            screenshot.takeScreenshot()
 
-            val uri =  screenshot.takeScreenshot()
-            System.out.println("Screenshot Uri: ${uri}")
         }
 
         //Tirando screenshot da tela inteira:
@@ -43,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 .shareAfterScreenshot(true)
                 .build()
 
-            val uri =  screenshot.takeScreenshot()
+            screenshot.takeScreenshot()
         }
     }
 }
