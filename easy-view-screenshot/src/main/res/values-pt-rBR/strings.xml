@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EasyScreenShot</string>
+    <string name="image_was_not_saved">Falha ao salvar imagem</string>
+    <string name="image_was_saved">Imagem salva com sucesso!</string>
+    <string name="sharing">Compartilhando screenshot</string>
+    <string name="share">Compartilhar</string>
+    <string name="no_app">Nenhum aplicativo disponível</string>
+</resources>

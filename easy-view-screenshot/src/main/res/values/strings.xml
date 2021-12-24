@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">ScreenShot</string>
-    <string name="image_was_not_saved">Falha ao salvar imagem</string>
+    <string name="app_name">EasyScreenShot</string>
+    <string name="image_was_not_saved">Failed saving image</string>
+    <string name="image_was_saved">Image sucessfully saved!</string>
+    <string name="sharing">Sharing screenshot</string>
+    <string name="share">Share</string>
+    <string name="no_app">No app available</string>
 </resources>

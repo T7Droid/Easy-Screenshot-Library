@@ -118,12 +118,12 @@ class Helper {
                     contentResolver?.openOutputStream(Objects.requireNonNull(imageUri!!))
                 bitmap?.compress(Bitmap.CompressFormat.JPEG, 100, outPutStream)
                 Objects.requireNonNull(outPutStream)
-                Toast.makeText(activityPar, "Imagem salva com sucesso!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activityPar, activityPar!!.getString(R.string.image_was_saved), Toast.LENGTH_SHORT).show()
                 if (shareImagePar!!) {
                     shareImage(imageUri, text)
                 }
             } catch (e: Exception) {
-                Toast.makeText(activityPar, "Falha ao salvar imagem!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activityPar, activityPar!!.getString(R.string.image_was_not_saved), Toast.LENGTH_SHORT).show()
             }
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -160,7 +160,7 @@ class Helper {
                 out.flush()
                 out.close()
 
-                Toast.makeText(activityPar, "Imagem salva com sucesso!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activityPar, activityPar!!.getString(R.string.image_was_saved), Toast.LENGTH_SHORT).show()
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
@@ -177,16 +177,16 @@ class Helper {
     private fun shareImage(imageUri: Uri?, text: String) {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.type = "image/*"
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Compartilhando imagem $text")
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "${activityPar!!.getString(R.string.image_was_saved)} $text")
         shareIntent.putExtra(Intent.EXTRA_TEXT, text)
         shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri)
 
         try {
-            activityPar!!.startActivity(Intent.createChooser(shareIntent, "Compartilhar"))
-            Toast.makeText(activityPar, "Compartilhando...", Toast.LENGTH_SHORT)
+            activityPar!!.startActivity(Intent.createChooser(shareIntent, activityPar!!.getString(R.string.share)))
+            Toast.makeText(activityPar, activityPar!!.getString(R.string.sharing), Toast.LENGTH_SHORT)
                 .show()
         } catch (e: ActivityNotFoundException) {
-            Toast.makeText(activityPar, "Nenhum aplicativo disponível", Toast.LENGTH_SHORT)
+            Toast.makeText(activityPar, activityPar!!.getString(R.string.no_app), Toast.LENGTH_SHORT)
                 .show()
         }
     }
