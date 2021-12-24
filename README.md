@@ -1,10 +1,13 @@
-English 🇺🇸 - Português (pt-br) 🇧🇷
+🇺🇸 English |  🇧🇷 Português (pt-br)
 
 
+-
+-
+-
 
 🇺🇸 _English:_
 
-### An easy to use Library that will help you to take screenshots of the views in yout app
+### An easy to use Library that will help you to take screenshots 📸 of the views in your app
 
 
 
@@ -27,13 +30,13 @@ Add it in your root build.gradle at the end of repositories:
 
 ```css
 	dependencies {
-	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:Tag'
+	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.0'
 	}
 ```
 
 
 
-**Step 3.** Add the READ and WRITE permissions on Manifest file:
+**Step 3.** Add the permissions in Manifest file:
 
 
 
@@ -47,16 +50,17 @@ Add it in your root build.gradle at the end of repositories:
 Now this is ready for use!
 
 ```
-val myTxtView = findViewById<View>(R.id.rootView)
+val myImageView = findViewById<View>(R.id.myImageView
 
-//In you activity or fragment, intantiate an EasyScreenshot object and pass the //parameters you want to it's Builder:
+//In you Activity or Fragment, instantiate an EasyScreenshot object and pass the 
+//parameters you want to it's Builder:
 
 val screenshot: EasyScreenshot = EasyScreenshot.Builder()
     .activity(this)
-    .folderName("T7Droid Images") //Nome da pasta que será criada na galeria
-    .pathInExternalStorage("screenshots") //Nome da imagem
-    .targetViewId(myTxtView) //Any View you want to take the screenshot
-    .shareAfterScreenshot(true) //se você deseja compartilhar após tirar o screenshot
+    .folderName("T7Droid Images") // Defines a name for the folder that will be created in galery;
+    .imageFileName("screenshots") //Set a name for the image file;
+    .targetViewId(myImageView //Any View you want to take the screenshot;
+    .shareAfterScreenshot(true) //Do you want to share just after take the screenshot?
     .build()
 
 screenshot.takeScreenshot()
@@ -64,39 +68,39 @@ screenshot.takeScreenshot()
 
 
 
-The parameters are:
+Methods:
 
 
 
-activity( activity: Activity) - The Activity context, you can use "this" if you are in an Activity, or, if you are inside a Fragment you can use activity, requireActivity, ... in Koltin, and getActivity( ) in Java;
+activity(activity: Activity) - The Activity context, you can use "this" inside an Activity, or, if you are inside a Fragment you can use activity, requireActivity, ... in Kotlin, and getActivity( ) in Java;
 
-folderName(folder: String ) - Here you can define the name of the new folder that will be created in the Galery app;
+folderName(folder: String ) - For the version before API 29 (Q) it will be the name of the folder that will be created to store the screenshots, for the version above (API 29 Q+) which uses the Scope Storage, it will be the name of the new folder that will be created in the Galery;
 
-pathInExternalStorage( ) - For the version before API 29 (Q) it will be the name of the folder that will be created to store the screenshots images, for the version above (API 29 Q+) which uses the Scope Storage, this will be the name  of the image saved.
+imageFileName( ) - Set a name for the image file;
 
-targetViewId(view: View) - Here you will pass the view you want to save as an image in the JPEG format, if you want to take a screenshot all the screen (not including ActionBar neither StatusBar) you need only to define an id for the root view of your Activity or Fragment and pass it as a parameter in this method;
+targetViewId(view: View) - Here can will pass any view you want to save as an image in the JPEG format, if you want to take a screenshot of the whole screen (not including ActionBar neither StatusBar) you need only to define an id for the root view of your Activity or Fragment and pass it as a parameter in this method. If you are using View Binding just pass binding.root;
 
 shareAfterScreenshot(share: Boolean) - Set true if you want to imediatelly share the image after taking the screenshot, if you want only to save the image and do not want to share set it as false.
 
 
 
-
-
-
-
-
+-
+-
+-
 
 🇧🇷 _Português:_
 
-### Uma Library fácil de usar que irá lhe permitir tirar screenshots das views no seu aplicativo, veja como usar:
 
+### Uma Library fácil de usar que irá lhe permitir tirar screenshots das telas ou Views (ImageViews, TextView, etc), salvar as imagens no seu aplicativo, além de poder compartilhá-lhas!
+
+#### Não se preocupe mais com ter que verificar a versão do Android, implementar Scoped Storage, solicitação de permissões em tempo de execução...🤯⌛ veja como usar:
 
 
 **Passo 1.** Adicione o repositório do JitPack ao seu projeto.
 
 
 
-Adicione ao seu arquivo raiz build.gradle  (Project), em repositories , ou no seu arquivo settings.gradle:
+Adicione a url ao seu arquivo build.gradle (Project) em repositories , ou,  no seu arquivo settings.gradle:
 
 ```css
 	allprojects {
@@ -107,17 +111,17 @@ Adicione ao seu arquivo raiz build.gradle  (Project), em repositories , ou no se
 	}
 ```
 
-**Step 2.** adicione a dependência
+**Passo 2.** adicione a dependência
 
 ```css
 	dependencies {
-	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:Tag'
+	        implementation 'com.github.T7Droid:Easy-Screenshot-Library:v1.0.0'
 	}
 ```
 
 
 
-**Step 3.** Adicione as permissões de leitura e gravação ao arquivo Manifest:
+**Passo 3.** Adicione as permissões de leitura e gravação no arquivo Manifest:
 
 
 
@@ -128,50 +132,49 @@ Adicione ao seu arquivo raiz build.gradle  (Project), em repositories , ou no se
 
 
 
-## E pronto, agora você já pode usar!
+## E pronto, é só isso! Agora você já pode usar à vontade :D
 
  
 
-Veja como nos comentários no código abaixo:
+Veja alguns parâmetros que podem ser passados para o construtor neste exemplo abaixo:
 
 ```
 
-val myTxtView = findViewById<View>(R.id.rootView)
-//Ou binding.myTextView se estiver usando o Viewbinding
+val myImageView = findViewById<View>(R.id.myImageView)
+//Ou binding.myImageView se estiver usando o View Binding
 
-//Na sua aActivity ou Fragment, instancie um objeto EasyScreenshot and passe
+//Na sua aActivity ou Fragment, instancie um objeto EasyScreenshot e passe
 //os parâmetros que desejar no seu construtor "EasyScreenshot.Builder()":
 
 val screenshot: EasyScreenshot = EasyScreenshot.Builder()
     .activity(this) // 1°- Activity
     .folderName("T7Droid Images") //2° - Nome para a pasta que será criada na galeria
-    .pathInExternalStorage("screenshots") //3° - Nome da imagem que será salva
+    .imageFileName("screenshots") //3° - Nome da imagem que será salva
     .targetViewId(myTxtView) //4° - View ou ViewGroup que desejar tirar o screenshot
     .shareAfterScreenshot(true) //5° - Deseja compartilhar após tirar o screenshot?
     .build()
 
-//Após criamos e instanciarmos nosso objeto Easycreenshot basta usá-lo :)
-//Para isso basta chamar o método takeScreenshot()
+//Após instanciarmos o objeto EasyScreenshot basta usá-lo chamando o método takeScreenshot() :D
 screenshot.takeScreenshot()
 ```
 
 
 
-Os métodos/parâmetros são:
+Os métodos e parâmetros que podem ser passados são:
 
 
 
-- activity( activity: Activity) - A Activity contexto, você pode usar "this" se estiver em uma Activity, ou, se estiver dentro um Fragment poderá passar como parâmetro "activity, requireActivity, etc..." em Koltin, e "getActivity( )" em Java;
+- activity( activity: Activity) - Uma Activity, você pode usar "this" se estiver em uma Activity, ou, se estiver dentro de um Fragment poderá passar como parâmetro "activity, requireActivity, etc..." em Kotlin, e "getActivity( )" em Java;
 
-- folderName(folder: String ) - Para as versões anteriores ao Android 10  (API 29 ou Q) o nome que você passar como parâmetro será o nome da nova pasta que será criada para armazenar seus screenshots. Por outro lado, nas versões Android 10 (API 29 ou Q) e acima, que fazem uso do Scoped storage, esse será o nome da nova pasta que será criada na galeria do seu dispositivo;
+- folderName(folder: String ) - Para as versões anteriores ao Android 10  (API 29 ou Q) o nome que você passar como parâmetro aqui será o nome da nova pasta que será criada para armazenar seus screenshots. Por outro lado, nas versões Android 10 (API 29 ou Q) e acima, que fazem uso do Scoped Storage, esse será o nome da nova pasta que será criada na galeria do seu dispositivo;
 
  Alguns exemplos de nomes: "Comprovantes", "Recibos", ou até o nome do seu próprio aplicativo :D
 
 - imageFileName( imageName: String) - Nome da imagem que será salva concatenado com a data em que foi tirada.
 
-targetViewId(view: View) - Aqui você irá passar qualquer View ou ViewGroup que desejar salvar como uma imagens no formato JPEG, se você desejar tirar um screenshot de toda a tela (não incluindo nessa versão a ActionBar nem a StatusBar) você precisa apenas definir um id  para a View raiz do layoutyour da sua Activity ou Fragment e passar como parâmetro nesse método;
+targetViewId(view: View) - Aqui você irá passar qualquer View ou ViewGroup que desejar salvar como uma imagem no formato JPEG, se você desejar tirar um screenshot de toda a tela (não incluindo nessa versão a ActionBar nem a StatusBar) você precisa apenas definir um id  para a View raiz do layout da sua Activity ou Fragment e passá-lo como parâmetro nesse método;
 
-shareAfterScreenshot(share: Boolean) - Defina como true se desejarcompartilhar a imagem imediatamente após armazená-la, se você deseja apenas salvar a imagem e não deseja compartilhá-la, defina como false.
+shareAfterScreenshot(share: Boolean) - Defina como true se desejar compartilhar a imagem imediatamente após armazená-la, se você deseja apenas salvar a imagem e não deseja compartilhá-la, defina como false.
 
 
 
