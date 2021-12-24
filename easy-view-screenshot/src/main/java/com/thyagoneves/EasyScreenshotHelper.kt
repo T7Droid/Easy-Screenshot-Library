@@ -120,7 +120,6 @@ class Helper {
                 bitmap?.compress(Bitmap.CompressFormat.JPEG, 100, outPutStream)
                 Objects.requireNonNull(outPutStream)
                 Toast.makeText(activityPar, activityPar!!.getString(R.string.image_was_saved), Toast.LENGTH_SHORT).show()
-                Toast.makeText(activityPar, imageUri.toString(), Toast.LENGTH_SHORT).show()
 
                 if (shareImagePar!!) {
                     shareImage(imageUri, text)
@@ -167,7 +166,6 @@ class Helper {
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
-            Toast.makeText(activityPar, Uri.parse(file.path).toString(), Toast.LENGTH_SHORT).show()
 
             if (shareImagePar == true) {
                 shareImage(Uri.parse(file.path), fname)
