@@ -179,6 +179,8 @@ Tem alguma dúvida sobre a library? Encontrou algum problema ou tem sugestões d
 ## Contato
 
 [www.t7droid@gmail.com](www.t7droid@gmail.com)
+</br>
+</br>
 [![](https://jitpack.io/v/T7Droid/Easy-Screenshot-Library.svg)](https://jitpack.io/#T7Droid/Easy-Screenshot-Library)
 
 
