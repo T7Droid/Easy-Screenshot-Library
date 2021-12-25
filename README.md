@@ -79,13 +79,9 @@ imageFileName( ) - Set a name for the image file;
 targetViewId(view: View) - Here can will pass any view you want to save as an image in the JPEG format, if you want to take a screenshot of the whole screen with the ActionBar  you need only to pass a constant called Type.FULLSCREEN_WITH_ACTION_BAR
 
 shareAfterScreenshot(share: Boolean) - Set true if you want to imediatelly share the image after taking the screenshot, if you want only to save the image and do not want to share set it as false.
-
-
-
--
--
--
-
+</br>
+</br>
+</br>
 🇧🇷 _Português:_
 
 
