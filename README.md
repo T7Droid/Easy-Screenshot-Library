@@ -1,10 +1,8 @@
 🇺🇸 English |  🇧🇷 Português (pt-br)
 
-
--
--
--
-
+</br>
+</br>
+</br>
 🇺🇸 _English:_
 
 ### An easy to use Library that will help you to take screenshots 📸 of the views in your app
